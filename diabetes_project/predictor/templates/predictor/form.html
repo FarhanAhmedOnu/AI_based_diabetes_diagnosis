@@ -1,0 +1,41 @@
+<form method="post">
+  {% csrf_token %}
+  <!-- Categorical fields -->
+  <select name="gender">
+    <option value="0">Male</option>
+    <option value="1">Female</option>
+  </select>
+
+  <select name="family_diabetes">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+  </select>
+
+  <!-- Repeat for other categorical features -->
+  
+  <select name="age_group">
+    <option value="Young">Young</option>
+    <option value="Mid">Mid</option>
+    <option value="Senior">Senior</option>
+    <option value="Elderly">Elderly</option>
+  </select>
+
+  <!-- Numerical fields -->
+  <input type="number" step="any" name="glucose" placeholder="Glucose">
+  <input type="number" step="any" name="bmi" placeholder="BMI">
+  <!-- Add all numerical features similarly -->
+
+  <select name="model_choice">
+    <option value="lr">Logistic Regression</option>
+    <option value="rf">Random Forest</option>
+    <option value="xgb">XGBoost</option>
+    <option value="lgb">LightGBM</option>
+    <option value="nn">Neural Network</option>
+  </select>
+
+  <button type="submit">Predict</button>
+</form>
+
+{% if result %}
+  <h3>Prediction: {{ result }}</h3>
+{% endif %}

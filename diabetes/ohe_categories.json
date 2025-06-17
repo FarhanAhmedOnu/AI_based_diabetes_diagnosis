@@ -1,0 +1,33 @@
+{
+    "gender": [
+        "0",
+        "1"
+    ],
+    "family_diabetes": [
+        "0",
+        "1"
+    ],
+    "hypertensive": [
+        "0",
+        "1"
+    ],
+    "family_hypertension": [
+        "0",
+        "1"
+    ],
+    "cardiovascular_disease": [
+        "0",
+        "1"
+    ],
+    "stroke": [
+        "0",
+        "1"
+    ],
+    "age_group": [
+        "Elderly",
+        "Mid",
+        "Senior",
+        "Young",
+        "nan"
+    ]
+}
