@@ -1,0 +1,51 @@
+{
+    "data_info": {
+        "input_features": [
+            "age",
+            "gender",
+            "pulse_rate",
+            "systolic_bp",
+            "diastolic_bp",
+            "glucose",
+            "height",
+            "weight",
+            "bmi",
+            "family_diabetes",
+            "hypertensive",
+            "family_hypertension",
+            "cardiovascular_disease",
+            "stroke",
+            "pulse_pressure",
+            "age_group"
+        ],
+        "categorical_features": [
+            "gender",
+            "family_diabetes",
+            "hypertensive",
+            "family_hypertension",
+            "cardiovascular_disease",
+            "stroke",
+            "age_group"
+        ],
+        "numerical_features": [
+            "age",
+            "pulse_rate",
+            "systolic_bp",
+            "diastolic_bp",
+            "glucose",
+            "height",
+            "weight",
+            "bmi",
+            "pulse_pressure"
+        ],
+        "train_shape": [
+            8147,
+            16
+        ],
+        "test_shape": [
+            2037,
+            16
+        ]
+    },
+    "models": {}
+}

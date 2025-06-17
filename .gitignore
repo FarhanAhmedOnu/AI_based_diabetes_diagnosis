@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Django-specific
+*.log
+*.pot
+db.sqlite3
+/media/
+local_settings.py
+/staticfiles/
+
+# IDE-specific
+.idea/
+.vscode/
+*.iml
+
+# Test/Coverage
+.coverage
+htmlcov/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
