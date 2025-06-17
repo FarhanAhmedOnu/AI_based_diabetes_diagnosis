@@ -1,41 +1,122 @@
-<form method="post">
-  {% csrf_token %}
-  <!-- Categorical fields -->
-  <select name="gender">
-    <option value="0">Male</option>
-    <option value="1">Female</option>
-  </select>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f7f7f7;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, select, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+        h2 {
+            color: #333;
+        }
+        .result {
+            font-weight: bold;
+            font-size: 20px;
+            color: #007bff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Diabetes Risk Prediction</h2>
 
-  <select name="family_diabetes">
-    <option value="0">No</option>
-    <option value="1">Yes</option>
-  </select>
+    <form method="post">
+        {% csrf_token %}
 
-  <!-- Repeat for other categorical features -->
-  
-  <select name="age_group">
-    <option value="Young">Young</option>
-    <option value="Mid">Mid</option>
-    <option value="Senior">Senior</option>
-    <option value="Elderly">Elderly</option>
-  </select>
+        <!-- Categorical Inputs -->
+        <label for="gender">Gender</label>
+        <select name="gender" required>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select>
 
-  <!-- Numerical fields -->
-  <input type="number" step="any" name="glucose" placeholder="Glucose">
-  <input type="number" step="any" name="bmi" placeholder="BMI">
-  <!-- Add all numerical features similarly -->
+        <label for="family_diabetes">Family History of Diabetes</label>
+        <select name="family_diabetes" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
 
-  <select name="model_choice">
-    <option value="lr">Logistic Regression</option>
-    <option value="rf">Random Forest</option>
-    <option value="xgb">XGBoost</option>
-    <option value="lgb">LightGBM</option>
-    <option value="nn">Neural Network</option>
-  </select>
+        <label for="hypertensive">Hypertensive</label>
+        <select name="hypertensive" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
 
-  <button type="submit">Predict</button>
-</form>
+        <label for="family_hypertension">Family History of Hypertension</label>
+        <select name="family_hypertension" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
 
-{% if result %}
-  <h3>Prediction: {{ result }}</h3>
-{% endif %}
+        <label for="cardiovascular_disease">Cardiovascular Disease</label>
+        <select name="cardiovascular_disease" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="stroke">Stroke History</label>
+        <select name="stroke" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label for="age_group">Age Group</label>
+        <select name="age_group" required>
+            <option value="Young">Young (0-30)</option>
+            <option value="Mid">Mid (31-45)</option>
+            <option value="Senior">Senior (46-60)</option>
+            <option value="Elderly">Elderly (61+)</option>
+        </select>
+
+        <!-- Example Numerical Inputs (adjust based on your dataset) -->
+        <label for="glucose">Glucose</label>
+        <input type="number" name="glucose" step="any" required>
+
+        <label for="bmi">BMI</label>
+        <input type="number" name="bmi" step="any" required>
+
+        <label for="blood_pressure">Blood Pressure</label>
+        <input type="number" name="blood_pressure" step="any" required>
+
+        <!-- Model Choice -->
+        <label for="model_choice">Select Model</label>
+        <select name="model_choice" required>
+            <option value="lr">Logistic Regression</option>
+            <option value="rf">Random Forest</option>
+            <option value="xgb">XGBoost</option>
+            <option value="lgb">LightGBM</option>
+            <option value="nn">Neural Network</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <div class="result">
+            Prediction: {{ result }}
+        </div>
+    {% endif %}
+</body>
+</html>
