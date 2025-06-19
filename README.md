@@ -5,7 +5,7 @@
 This project develops an end-to-end AI system for diabetes diagnosis using machine learning and large language models (LLMs). The solution integrates predictive modeling with conversational AI for comprehensive patient assessment.
 
 
-## 🔍 Data Processing
+##  Data Processing
 ### Initial Dataset
 - **5,000 patient records** with diabetic/non-diabetic classification
 - Significant class imbalance: 
@@ -94,7 +94,7 @@ model.fit(X_train, y_train)
 **Sample Output:**  
 "Low chance: 29.30% │ High chance: 58.73%"
 
-## 🧠 Explainable AI (XAI)
+##  Explainable AI (XAI)
 ### Interpretation Techniques
 1. **Global Explanations:**
    - SHAP summary plots
