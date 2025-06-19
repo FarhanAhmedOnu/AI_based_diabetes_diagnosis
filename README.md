@@ -11,7 +11,7 @@ This project develops an end-to-end AI system for diabetes diagnosis using machi
 - Significant class imbalance: 
   - Non-diabetic (0): ~4,500 cases 
   - Diabetic (1): ~500 cases
-![Data](Screenshots\data.png)
+![Data](./Screenshots/data.png)
 ### Preprocessing Steps
 1. Removed invalid/zero values from critical features
 2. Eliminated physiologically impossible values
