@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Diabetes Prediction</h1>
+        <p class="text-center text-gray-600 mb-8">Enter the patient's information to see a hypothetical diabetes prediction.</p>
+
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div>
+                <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                <input type="number" id="age" name="age" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 45">
+            </div>
+            <div>
+                <label for="pulse_rate" class="block text-sm font-medium text-gray-700">Pulse Rate (bpm)</label>
+                <input type="number" id="pulse_rate" name="pulse_rate" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 72">
+            </div>
+            <div>
+                <label for="systolic_bp" class="block text-sm font-medium text-gray-700">Systolic BP (mmHg)</label>
+                <input type="number" id="systolic_bp" name="systolic_bp" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 120">
+            </div>
+            <div>
+                <label for="diastolic_bp" class="block text-sm font-medium text-gray-700">Diastolic BP (mmHg)</label>
+                <input type="number" id="diastolic_bp" name="diastolic_bp" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 80">
+            </div>
+            <div>
+                <label for="glucose" class="block text-sm font-medium text-gray-700">Glucose (mg/dL)</label>
+                <input type="number" id="glucose" name="glucose" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 100">
+            </div>
+            <div>
+                <label for="height" class="block text-sm font-medium text-gray-700">Height (cm)</label>
+                <input type="number" id="height" name="height" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 170">
+            </div>
+            <div>
+                <label for="weight" class="block text-sm font-medium text-gray-700">Weight (kg)</label>
+                <input type="number" id="weight" name="weight" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 70">
+            </div>
+            <div>
+                <label for="bmi" class="block text-sm font-medium text-gray-700">BMI</label>
+                <input type="number" id="bmi" name="bmi" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" step="0.01" placeholder="e.g., 24.2">
+            </div>
+            <div>
+                <label for="pulse_pressure" class="block text-sm font-medium text-gray-700">Pulse Pressure</label>
+                <input type="number" id="pulse_pressure" name="pulse_pressure" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="e.g., 40">
+            </div>
+
+            <div>
+                <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                <select id="gender" name="gender" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+            <div>
+                <label for="family_diabetes" class="block text-sm font-medium text-gray-700">Family History of Diabetes</label>
+                <select id="family_diabetes" name="family_diabetes" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="hypertensive" class="block text-sm font-medium text-gray-700">Hypertensive</label>
+                <select id="hypertensive" name="hypertensive" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="family_hypertension" class="block text-sm font-medium text-gray-700">Family History of Hypertension</label>
+                <select id="family_hypertension" name="family_hypertension" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="cardiovascular_disease" class="block text-sm font-medium text-gray-700">Cardiovascular Disease</label>
+                <select id="cardiovascular_disease" name="cardiovascular_disease" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="stroke" class="block text-sm font-medium text-gray-700">Stroke</label>
+                <select id="stroke" name="stroke" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div>
+                <label for="age_group" class="block text-sm font-medium text-gray-700">Age Group</label>
+                <select id="age_group" name="age_group" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">Select</option>
+                    <option value="Elderly">Elderly</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Young">Young</option>
+                    <option value="nan">N/A</option>
+                </select>
+            </div>
+
+            <div class="col-span-full flex justify-center mt-6">
+                <button type="submit" class="w-full md:w-auto px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Predict Diabetes
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Prediction Result:</h2>
+            <div id="prediction-output" class="text-xl font-semibold text-gray-700 p-4 bg-gray-50 rounded-md">
+                <span class="text-gray-500">Result will appear here...</span>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">Note: This is a demo page for visual representation only. No actual prediction is performed.</p>
+        </div>
+    </div>
+</body>
+</html>

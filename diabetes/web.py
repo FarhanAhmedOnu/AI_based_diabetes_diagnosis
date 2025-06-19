@@ -16,7 +16,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 
 # 1. Load dataset
-df = pd.read_csv('diabetes_data.csv')  # Replace with your actual file path
+df = pd.read_csv('Diabetes_Final_Data_V2.csv')  # Replace with your actual file path
 
 # 2. Clean column names
 df.columns = df.columns.str.strip()
@@ -27,7 +27,7 @@ categorical_features = [
     "family_hypertension", "cardiovascular_disease",
     "stroke", "age_group"
 ]
-target_col = 'diabetes'
+target_col = 'diabetic'
 
 # 4. Handle age_group if necessary
 if 'age_group' not in df.columns or df['age_group'].isnull().any():
